@@ -1,0 +1,8 @@
+# client
+/[Ll]ibrary/
+/[Oo]bj/
+/[Ll]ogs/
+/.vs/
+*.csproj
+*.unityproj
+*.sln
