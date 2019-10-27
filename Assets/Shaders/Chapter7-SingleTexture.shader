@@ -68,7 +68,6 @@ Shader "Unity Shaders Book/Chapter 7/Single Texture" {
                 fixed3 halfDir = normalize(worldLightDir + viewDir);
                 fixed3 specular = _LightColor0.rgb * _Specular.rgb * pow(max(0, dot(worldNormal, halfDir)), _Gloss);
 
-
                 fixed3 color = ambient + diffuse + specular;
 
                 return fixed4(color, 1.0);
