@@ -13,7 +13,7 @@ Shader "Unity Shaders Book/Common/Bumped Diffuse" {
 
         Pass { 
             Tags { "LightMode"="ForwardBase" }
-        
+
             CGPROGRAM
             
             #pragma multi_compile_fwdbase
@@ -81,7 +81,7 @@ Shader "Unity Shaders Book/Common/Bumped Diffuse" {
                 fixed3 albedo = tex2D(_MainTex, i.uv.xy).rgb * _Color.rgb;
                 
                 fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;
-            
+
                 fixed3 diffuse = _LightColor0.rgb * albedo * max(0, dot(bump, lightDir));
                 
                 UNITY_LIGHT_ATTENUATION(atten, i, worldPos);
@@ -96,12 +96,12 @@ Shader "Unity Shaders Book/Common/Bumped Diffuse" {
             Tags { "LightMode"="ForwardAdd" }
             
             Blend One One
-        
+
             CGPROGRAM
             
-            #pragma multi_compile_fwdadd
+            // #pragma multi_compile_fwdadd
             // Use the line below to add shadows for point and spot lights
-//          #pragma multi_compile_fwdadd_fullshadows
+            #pragma multi_compile_fwdadd_fullshadows
             
             #pragma vertex vert
             #pragma fragment frag
