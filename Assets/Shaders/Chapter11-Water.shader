@@ -31,7 +31,7 @@ Shader "Unity Shaders Book/Chapter 11/Water" {
             float4 _MainTex_ST;
             float _Magnitude;
             float _Frequency;
-            float _InvWaveLength;  // Frequency和InvWaveLength是用来控制定点动画的
+            float _InvWaveLength;  // Frequency和InvWaveLength是用来控制顶点动画的
             float _Speed;  // Speed是用来控制纹理动画速度的
             
             struct a2v {
