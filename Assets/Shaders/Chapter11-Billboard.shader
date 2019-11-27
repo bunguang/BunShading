@@ -1,14 +1,12 @@
-﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+﻿// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "Unity Shaders Book/Chapter 11/Water" {
+Shader "Unity Shaders Book/Chapter 11/Billboard" {
     Properties {
         _Color ("Color Tint", Color) = (1, 1, 1, 1)
         _MainTex ("Main Tex", 2D) = "white" {}
-        _Magnitude("Distortion Magnitude", Float) = 1
-        _Frequency("Distortion Frequency", Float) = 1
-        _InvWaveLength("Distortion Inverse Wave Length", Float) = 10
-        _Speed ("Speed", Float) = 0.5
+        _VerticalBillboarding ("Vertical Restraints", Range(0, 1)) = 1
     }
     SubShader {
         Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" "DisableBatching"="True" }
@@ -29,10 +27,7 @@ Shader "Unity Shaders Book/Chapter 11/Water" {
             fixed4 _Color;
             sampler2D _MainTex;
             float4 _MainTex_ST;
-            float _Magnitude;
-            float _Frequency;
-            float _InvWaveLength;  // Frequency和InvWaveLength是用来控制顶点动画的
-            float _Speed;  // Speed是用来控制纹理动画速度的
+            float _VerticalBillboarding;
             
             struct a2v {
                 float4 vertex : POSITION;
@@ -46,14 +41,22 @@ Shader "Unity Shaders Book/Chapter 11/Water" {
             
             v2f vert(a2v v) {
                 v2f o;
-                float4 offset;
-                offset.yzw = float3(0.0, 0.0, 0.0);
-                offset.x = sin(_Frequency * _Time.y + v.vertex.z * _InvWaveLength) * _Magnitude;
+                float3 center = float3(0 ,0 ,0);
+                float3 viewer = mul(unity_WorldToObject, float4(_WorldSpaceCameraPos, 1));
 
-                o.pos = UnityObjectToClipPos(v.vertex + offset);
+                float3 normalDir = viewer - center;
+                normalDir.y = normalDir.y * _VerticalBillboarding;
+                normalDir = normalize(normalDir);
 
+                float3 upDir = abs(normalDir.y > 0.999) ? float3(0, 0, 1) : float3(0, 1, 0);
+                float3 rightDir = normalize(cross(upDir, normalDir));
+                upDir = normalize(cross(normalDir, rightDir));
+
+                float3 centerOffs = v.vertex.xyz - center;
+                float3 localPos = center + rightDir * centerOffs.x + upDir * centerOffs.y + normalDir * centerOffs.z;
+                
+                o.pos = UnityObjectToClipPos(float4(localPos, 1));
                 o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
-                o.uv += float2(0.0, _Time.y * _Speed);  // 这一步其实是纹理动画，可以让水流纹理循环播放
                 return o;
             }
             
