@@ -54,6 +54,7 @@ Shader "Unity Shaders Book/Chapter 11/Billboard" {
 
                 float3 centerOffs = v.vertex.xyz - center;
                 float3 localPos = center + rightDir * centerOffs.x + upDir * centerOffs.y + normalDir * centerOffs.z;
+                // 这里的流程是：先算出原来模型空间的xyz offset模，然后再在新的模型空间正交基上乘以offset，来达到旋转的效果
                 
                 o.pos = UnityObjectToClipPos(float4(localPos, 1));
                 o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);

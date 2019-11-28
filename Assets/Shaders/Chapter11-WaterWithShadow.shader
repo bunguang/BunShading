@@ -1,7 +1,7 @@
 ﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "Unity Shaders Book/Chapter 11/Water" {
+Shader "Unity Shaders Book/Chapter 11/Water With Shadow" {
     Properties {
         _Color ("Color Tint", Color) = (1, 1, 1, 1)
         _MainTex ("Main Tex", 2D) = "white" {}
@@ -66,6 +66,55 @@ Shader "Unity Shaders Book/Chapter 11/Water" {
 
             ENDCG
         }
+
+    	Pass {
+    		Tags { "LightMode" = "ShadowCaster" }
+
+    		CGPROGRAM
+
+    		#pragma vertex vert
+    		#pragma fragment frag
+
+    		#pragma multi_compile_shadowcaster
+
+    		#include "UnityCG.cginc"
+
+    		float _Magnitude;
+            float _Frequency;
+            float _InvWaveLength;  // Frequency和InvWaveLength是用来控制顶点动画的
+            // 纹理动画的speed属性这里感觉暂时不需要
+
+            struct a2v {
+            	float4 vertex : POSITION;
+            	float4 normal : NORMAL;
+            };
+
+            struct v2f
+            {
+            	V2F_SHADOW_CASTER;
+            };
+
+            v2f vert(a2v v) {
+            	v2f o;
+
+            	float4 offset;
+
+            	offset.yzw = float3(0.0, 0.0, 0.0);
+                offset.x = sin(_Frequency * _Time.y + v.vertex.z * _InvWaveLength) * _Magnitude;
+
+                v.vertex = v.vertex + offset;
+
+                TRANSFER_SHADOW_CASTER_NORMALOFFSET(o)
+                return o;
+            }
+
+            fixed4 frag(v2f i) : SV_Target {
+            	SHADOW_CASTER_FRAGMENT(i)
+            }
+
+            ENDCG
+
+    	}
         
     } 
     FallBack "VertexLit"
