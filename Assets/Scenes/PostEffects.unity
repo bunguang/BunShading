@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 135942897}
   - component: {fileID: 135942896}
   - component: {fileID: 135942899}
+  - component: {fileID: 135942900}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -281,7 +282,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135942895}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a53278e97cf218f4ab2eb1d30d898bb5, type: 3}
   m_Name: 
@@ -290,6 +291,22 @@ MonoBehaviour:
   brightness: 0.99
   saturation: 1
   contrast: 1
+--- !u!114 &135942900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135942895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c408fa42e5261489b242b0ddef8919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  edgeDetectionShader: {fileID: 4800000, guid: 3894c18e88a9a804590d2a139aa47048, type: 3}
+  edgesOnly: 0
+  edgeColor: {r: 0, g: 0, b: 0, a: 1}
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &439867948
 GameObject:
   m_ObjectHideFlags: 0
