@@ -21,18 +21,6 @@ public class EdgeDetection : PostEffectsBase
     public Color edgeColor = Color.black;
 
     public Color backgroundColor = Color.white;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void OnRenderImage(RenderTexture src, RenderTexture dest)
     {
