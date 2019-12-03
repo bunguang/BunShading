@@ -558,7 +558,6 @@ GameObject:
   - component: {fileID: 1192316802}
   - component: {fileID: 1192316801}
   - component: {fileID: 1192316800}
-  - component: {fileID: 1192316803}
   - component: {fileID: 1192316804}
   m_Layer: 0
   m_Name: Main Camera
@@ -597,8 +596,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 50
+  near clip plane: 1
+  far clip plane: 15
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -625,26 +624,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192316799}
   m_LocalRotation: {x: -0.24349372, y: -0.37388504, z: 0.102369465, w: -0.8890677}
-  m_LocalPosition: {x: -4.209, y: 4.300993, z: -9.1598625}
+  m_LocalPosition: {x: -3.207, y: 4.312, z: -9.1598625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1192316803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192316799}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cc6ec8a371182542822db888049eb8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  motionBlurShader: {fileID: 4800000, guid: 33fa9331350efa84bbe007a35fefc9eb, type: 3}
-  blurAmount: 0.5
 --- !u!114 &1192316804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,7 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motionBlurShader: {fileID: 4800000, guid: 5a0233facb30fbb4290b55dde7bb30ec, type: 3}
-  blurSize: 0.056
+  blurSize: 0.15
 --- !u!1 &1433142565
 GameObject:
   m_ObjectHideFlags: 0
