@@ -40,6 +40,9 @@ Shader "Unity Shaders Book/Chapter 12/Motion Blur With Depth Texture" {
 
         fixed4 frag(v2f i) : SV_Target {
             float d = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, i.uv_depth);
+            #if defined(UNITY_REVERSED_Z)
+				d = 1.0 - d;
+			#endif
             float4 H = float4(i.uv.x * 2 - 1, i.uv.y * 2 - 1, d * 2 - 1, 1);  // NDC坐标
             float4 D = mul(_CurrentViewProjectionInverseMatrix, H);
             float4 worldPos = D / D.w;  // 世界坐标
@@ -48,18 +51,16 @@ Shader "Unity Shaders Book/Chapter 12/Motion Blur With Depth Texture" {
             float4 previousPos = mul(_PreviousViewProjectionMatrix, worldPos);
             previousPos /= previousPos.w;  // 上一帧NDC坐标
 
-            float2 velocity = (currentPos.xy - previousPos.xy) / 2.0f;
-
-            float2 uv = i.uv;
-            float4 c = tex2D(_MainTex, uv);
-            uv += velocity * _BlurSize;
-
-            for (int it = 1; it < 3; it++, uv += velocity * _BlurSize) {
-            	float4 currentColor = tex2D(_MainTex, uv);
-            	c += currentColor;
-            }
-
-            c /= 3;
+            float2 velocity = (currentPos.xy - previousPos.xy)/2.0f;
+			
+			float2 uv = i.uv;
+			float vecColRate[3] = { 0.5,0.3,0.2 };
+			float4 c = tex2D(_MainTex, uv) * vecColRate[0];
+			uv += velocity * _BlurSize;
+			for (int it = 1; it < 3; it++, uv += velocity * _BlurSize) {
+				float4 currentColor = tex2D(_MainTex, uv);
+				c += currentColor * vecColRate[it];
+			}
 
             return fixed4(c.rgb, 1.0);  
         }
