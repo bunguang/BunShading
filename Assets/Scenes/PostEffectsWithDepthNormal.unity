@@ -560,6 +560,8 @@ GameObject:
   - component: {fileID: 1192316800}
   - component: {fileID: 1192316804}
   - component: {fileID: 1192316803}
+  - component: {fileID: 1192316805}
+  - component: {fileID: 1192316806}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -638,7 +640,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192316799}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b280df7eb2f79647aa488dbab821970, type: 3}
   m_Name: 
@@ -662,6 +664,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   motionBlurShader: {fileID: 4800000, guid: 33fa9331350efa84bbe007a35fefc9eb, type: 3}
   blurAmount: 0.801
+--- !u!114 &1192316805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192316799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e1b00da52a919439ae8c578dd9d599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  edgeDetectShader: {fileID: 4800000, guid: 59751d62e7fc3b14596fec608fdfa774, type: 3}
+  edgesOnly: 0
+  edgeColor: {r: 0, g: 0, b: 0, a: 1}
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  sampleDistance: 1
+  sensitivityDepth: 1
+  sensitivityNormals: 1
+--- !u!114 &1192316806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192316799}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c408fa42e5261489b242b0ddef8919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  edgeDetectionShader: {fileID: 4800000, guid: 3894c18e88a9a804590d2a139aa47048, type: 3}
+  edgesOnly: 0
+  edgeColor: {r: 0, g: 0, b: 0, a: 1}
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1433142565
 GameObject:
   m_ObjectHideFlags: 0
