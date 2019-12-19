@@ -1,7 +1,7 @@
 ﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "Unity Shaders Book/Chapter 12/Motion Blur With Depth Texture" {
+Shader "Unity Shaders Book/Chapter 13/Motion Blur With Depth Texture" {
     Properties {
         _MainTex ("Base (RGB)", 2D) = "white" {}
         _BlurSize ("Blur Size", Float) = 1.0

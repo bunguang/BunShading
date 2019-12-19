@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 6b280df7eb2f79647aa488dbab821970
+guid: 90e1b00da52a919439ae8c578dd9d599
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - fogShader: {fileID: 4800000, guid: f09697f8c0c096441aae8e30729de7b7, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

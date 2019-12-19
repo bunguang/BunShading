@@ -45,7 +45,7 @@ public class FogWithDepthTexture : PostEffectsBase {
     }
 
     void OnRenderImage(RenderTexture src, RenderTexture dest) {
-        if (material == null) {
+        if (material != null) {
             Matrix4x4 frustumCorners = Matrix4x4.identity;
 
             float fov = camera.fieldOfView;
@@ -81,7 +81,6 @@ public class FogWithDepthTexture : PostEffectsBase {
             frustumCorners.SetRow(3, topLeft);
 
             material.SetMatrix("_FrustumCornersRay", frustumCorners);
-            material.SetMatrix("_ViewProjectionInverseMatrix", (camera.projectionMatrix * camera.worldToCameraMatrix).inverse);
 
             material.SetFloat("_FogDensity", fogDensity);
             material.SetColor("_FogColor", fogColor);
