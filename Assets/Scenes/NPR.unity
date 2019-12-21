@@ -290,7 +290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508404472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.414, y: 5.157, z: -11.725}
+  m_LocalPosition: {x: 7.25, y: 5.46, z: -2.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -326,7 +326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9ce18514e017ff04c8267f774d9c8669, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.1
+      value: -11.93
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9ce18514e017ff04c8267f774d9c8669, type: 3}
       propertyPath: m_LocalPosition.y
@@ -334,7 +334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9ce18514e017ff04c8267f774d9c8669, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.31
+      value: 3.91
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9ce18514e017ff04c8267f774d9c8669, type: 3}
       propertyPath: m_LocalRotation.x
@@ -539,7 +539,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251624607}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4862, y: 3.4879007, z: 7.12}
+  m_LocalPosition: {x: 2.96, y: 3.4879007, z: 7.12}
   m_LocalScale: {x: 4.1316, y: 4.1316, z: 4.1316}
   m_Children: []
   m_Father: {fileID: 0}
@@ -558,15 +558,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: 76c1be60384aaa040a235b15930425f3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.535
+      value: 7.1048007
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: 76c1be60384aaa040a235b15930425f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.721
+      value: 3.7265
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: 76c1be60384aaa040a235b15930425f3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.064
+      value: 1.31
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: 76c1be60384aaa040a235b15930425f3, type: 3}
       propertyPath: m_LocalRotation.x
@@ -574,7 +574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: 76c1be60384aaa040a235b15930425f3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9894921
+      value: 0.96423674
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: 76c1be60384aaa040a235b15930425f3, type: 3}
       propertyPath: m_LocalRotation.z
@@ -582,7 +582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: 76c1be60384aaa040a235b15930425f3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.14458708
+      value: -0.2650426
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: 76c1be60384aaa040a235b15930425f3, type: 3}
       propertyPath: m_RootOrder
@@ -594,11 +594,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: 76c1be60384aaa040a235b15930425f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 163.373
+      value: 210.739
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: 76c1be60384aaa040a235b15930425f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400042, guid: 76c1be60384aaa040a235b15930425f3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.8417
+      objectReference: {fileID: 0}
+    - target: {fileID: 400042, guid: 76c1be60384aaa040a235b15930425f3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.8417
+      objectReference: {fileID: 0}
+    - target: {fileID: 400042, guid: 76c1be60384aaa040a235b15930425f3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.8417
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 76c1be60384aaa040a235b15930425f3, type: 3}
       propertyPath: m_Materials.Array.data[0]
