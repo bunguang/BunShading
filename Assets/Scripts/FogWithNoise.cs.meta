@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: a374c6dabd5c4e0408e14e459327aa87
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - fogShader: {fileID: 4800000, guid: bd76adcc9065c394896ae12de9b95648, type: 3}
+  - noiseTexture: {fileID: 2800000, guid: 00b33ff1052d0794ba903d4a2ef924e0, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
