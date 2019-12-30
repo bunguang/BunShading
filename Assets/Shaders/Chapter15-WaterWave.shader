@@ -104,6 +104,7 @@ Shader "Unity Shaders Book/Chapter 15/Water Wave" {
 				// 计算菲涅尔系数
 				fixed fresnel = pow(1 - saturate(dot(viewDir, bump)), 4);
 				fixed3 finalColor = reflColor * fresnel + refrColor * (1 - fresnel);
+				// fixed3 finalColor = reflColor;
 
 				return fixed4(finalColor, 1.0);
 			}
